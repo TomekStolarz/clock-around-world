@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background-image: linear-gradient(-90deg, #076DBF, #000);
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 80vw;
+    margin: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 30vw;
+    height: 50vh;
+    background-color: #D9D9D9;
+    border-radius: 1.2em;
+
+    display: flex;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    height: 100%;
+    width: 60%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+}
+
+form > * {
+    width: 100%;
+}
+
+.form-title {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text {
+    width: 60vw;
+}
+
+.text > div {
+    font-family: 'Graduate';
+    color: white;
+}
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control > label {
+    margin-left: 1ch;
+    font-weight: bold;
+}
+
+.input-control > input {
+    background-color: transparent;
+    border-radius: 2em;
+    border: 1px solid #000;
+    padding: 0.5em;
+    box-shadow: 2px 2px 2px #00000025, -2px 2px 2px #00000025;
+}
+
+button {
+    border-radius: 2em;
+    border: 0px;
+    background-color: #548D88;
+    padding: 0.5em;
+    color: white;
+    box-shadow: 2px 2px 2px #00000025, -2px 2px 2px #00000025;
+}
+
+.title {
+    font-size: 6em;
+}
+
+.description {
+    font-size: 3em;
+}
+
+.register-link {
+    text-align: center;
+    text-decoration: none;
+    color: #054D87;
+    font-weight: bold;
+}
