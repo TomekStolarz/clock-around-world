@@ -5,7 +5,9 @@
 
 body {
     margin: 0;
+    font-size: 1.2vw;
 }
+
 
 .container {
     background-image: linear-gradient(-90deg, #076DBF, #000);
@@ -13,27 +15,27 @@ body {
     width: 100vw;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .box {
     width: 80vw;
-    margin: auto;
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 10fr 1fr;
 }
 
 .login-form {
-    width: 30vw;
     height: 50vh;
     background-color: #D9D9D9;
     border-radius: 1.2em;
-
     display: flex;
     align-items: center;
+    grid-row: 1;
+    grid-column: 2;
 }
 
 form {
@@ -57,7 +59,8 @@ form > * {
 }
 
 .text {
-    width: 60vw;
+    grid-row: 1 / span 2;
+    grid-column: 1;
 }
 
 .text > div {
@@ -105,4 +108,24 @@ button {
     text-decoration: none;
     color: #054D87;
     font-weight: bold;
+}
+
+.language {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: end;
+    margin-right: 2%;
+    align-self: end;
+    display: flex;
+}
+
+.language > select {
+    background-color: #D9D9D9;
+    padding: 15%;
+    border-radius: 15%;
+}
+
+.lang {
+    text-transform: uppercase;
+    background-color: #D9D9D9;
 }
