@@ -64,15 +64,6 @@ form > * {
     box-shadow: 2px 2px 2px #00000025, -2px 2px 2px #00000025;
 }
 
-button {
-    border-radius: 2em;
-    border: 0px;
-    background-color: #548D88;
-    padding: 0.5em;
-    color: white;
-    box-shadow: 2px 2px 2px #00000025, -2px 2px 2px #00000025;
-}
-
 .title {
     font-size: 6em;
 }
