@@ -1,0 +1,23 @@
+.row > :nth-child(2) {
+    display: none
+}
+
+.title-row > :first-child {
+    border-right: 1px solid #000;
+}
+
+.row {
+    grid-template-columns: 2fr 1fr;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 8px;
+    width: 95vw;
+}
+
+.clock-title {
+    font-size: 7.4vw;
+}

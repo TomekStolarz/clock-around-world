@@ -89,7 +89,7 @@
     align-self: end;
 }
 
-.button-box > button {
+.button-box > a > button {
     padding: 0.7em 2em;
 }
 
@@ -100,13 +100,13 @@
     justify-content: stretch;
 
     border-radius: 5px;
-    background-color: #D9D9D9;  
+    background-color: #E8E8E8;  
     margin-bottom: 5px;
 }
 
 .title-row {
     border: 1px solid #000;
-    width: 98%;
+    width: 97%;
 }
 
 .title-row > :nth-child(2) {
@@ -136,5 +136,11 @@
     font-size: 1.5vw;
     text-align: center;
     padding: 2% 0%;
+}
+
+@media only screen and (hover: none) and (pointer: coarse){
+    .title-row {
+        width: 100%;
+    }
 }
 
