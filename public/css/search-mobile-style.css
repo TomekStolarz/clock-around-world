@@ -1,0 +1,7 @@
+.box {
+    font-size: max(10px, 2vw);;
+}
+
+.records > .row {
+    padding: 4% 0%;
+}
