@@ -63,14 +63,6 @@
     justify-content: space-between;
 }
 
-.table-title {
-    font-family: 'Graduate';
-    font-size: 3vw;
-    text-transform: uppercase;
-    text-align: center;
-    padding-top: 1%;
-}
-
 .followed-table {
     font-size: 3vw;
     text-transform: uppercase;
@@ -114,22 +106,6 @@
     border-right: 1px solid #000;
 }
 
-.records {
-    overflow-y: auto;
-    max-height: 26vh;
-    width: 100%;
-    scroll-snap-type: y mandatory;
-    scrollbar-gutter: stable both-edges;
-}
-
-.records:last-child {
-    margin-bottom: 0;
-}
-
-.records > .row {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-}
 
 .col {
     font-family: 'Graduate'; 

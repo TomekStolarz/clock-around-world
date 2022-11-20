@@ -28,3 +28,29 @@ button {
     color: white;
     box-shadow: 2px 2px 2px #00000025, -2px 2px 2px #00000025;
 }
+
+.records {
+    overflow-y: auto;
+    max-height: 26vh;
+    width: 100%;
+    scroll-snap-type: y mandatory;
+    scrollbar-gutter: stable both-edges;
+}
+
+.records:last-child {
+    margin-bottom: 0;
+}
+
+.records > .row {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+}
+
+
+.table-title {
+    font-family: 'Graduate';
+    font-size: 3.5em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 1%;
+}
