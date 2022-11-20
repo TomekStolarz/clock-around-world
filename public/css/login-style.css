@@ -1,6 +1,5 @@
 .box {
-    width: 80vw;
-    
+    align-items: center;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 10fr 1fr;
@@ -54,6 +53,7 @@ form > * {
 .input-control > label {
     margin-left: 1ch;
     font-weight: bold;
+    font-size: 1.2em;
 }
 
 .input-control > input {
@@ -62,6 +62,7 @@ form > * {
     border: 1px solid #000;
     padding: 0.5em;
     box-shadow: 2px 2px 2px #00000025, -2px 2px 2px #00000025;
+    font-size: 1em;
 }
 
 .title {
@@ -91,10 +92,14 @@ form > * {
 .language > select {
     background-color: #D9D9D9;
     padding: 15%;
-    border-radius: 15%;
+    border-radius: 15px;
 }
 
 .lang {
     text-transform: uppercase;
     background-color: #D9D9D9;
+}
+
+button {
+    font-size: 1.2em;
 }
