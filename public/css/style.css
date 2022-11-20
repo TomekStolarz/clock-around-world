@@ -47,7 +47,7 @@ button {
 }
 
 
-.table-title {
+.table-title, .label, .col-value {
     font-family: 'Graduate';
     font-size: 3.5em;
     text-transform: uppercase;

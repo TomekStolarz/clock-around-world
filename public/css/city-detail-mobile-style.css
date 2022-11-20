@@ -1,0 +1,17 @@
+.detail-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label, .col-value {
+    text-align: left;
+}
+
+.box {
+    font-size: max(7px, 1.1vw);
+}
+
+.actions {
+    justify-content: space-around;
+}
