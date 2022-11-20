@@ -37,7 +37,6 @@ button {
 
 .records {
     overflow-y: auto;
-    max-height: 26vh;
     width: 100%;
     scroll-snap-type: y mandatory;
     scrollbar-gutter: stable both-edges;
@@ -58,6 +57,9 @@ button {
     font-size: 3.5em;
     text-transform: uppercase;
     text-align: center;
+}
+
+.label, .col-value {
     padding-top: 1%;
 }
 

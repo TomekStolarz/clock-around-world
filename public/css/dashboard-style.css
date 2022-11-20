@@ -65,6 +65,9 @@
     align-items: center;
 }
 
+.records {
+    max-height: 26vh;
+}
 
 .button-box {
     padding: 0.5% 0;

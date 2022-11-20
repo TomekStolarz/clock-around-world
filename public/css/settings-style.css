@@ -60,6 +60,9 @@
 
 button {
     padding: 0.8em 0.5em;
+}
+
+.left-offset-button {
     margin-left: 1em;
 }
 
