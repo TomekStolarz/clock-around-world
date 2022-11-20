@@ -20,6 +20,12 @@ body {
     justify-content: center;
 }
 
+.box {
+    height: 90%;
+    width: 90%;
+    font-size: 1vw;
+}
+
 button {
     border-radius: 2em;
     border: 0px;

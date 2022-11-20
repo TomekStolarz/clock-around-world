@@ -1,8 +1,6 @@
 .box {
     display: grid;
     grid-template-rows: minmax(0, 1fr) minmax(0, 2fr);
-    height: 90%;
-    width: 90%;
     margin: auto;
 }
 
