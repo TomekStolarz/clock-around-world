@@ -85,3 +85,11 @@ button {
 .actions > :last-child {
     background-color: #D9D9D9;
 }
+
+.back {
+    justify-content: flex-start;
+}
+
+.back > a > button {
+    margin-left: 0;
+}
