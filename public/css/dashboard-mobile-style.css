@@ -11,8 +11,6 @@
 }
 
 .box {
-    display: flex;
     align-items: center;
-    flex-direction: column;
     font-size: max(10px, 2vw);
 }
