@@ -61,7 +61,6 @@
 }
 
 .followed-table {
-    font-size: 3vw;
     text-transform: uppercase;
     background-color: #EFEFEF;
     padding: 1% 2%;
@@ -80,7 +79,7 @@
 }
 
 .button-box > a > button {
-    padding: 0.7em 2em;
+    padding: 0.6em 7em;
 }
 
 
@@ -111,6 +110,7 @@
     text-align: center;
     padding: 2% 0%;
 }
+
 
 @media only screen and (hover: none) and (pointer: coarse){
     .title-row {
