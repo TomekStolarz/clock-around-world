@@ -1,0 +1,48 @@
+.box {
+    display: grid;
+    margin: auto;
+}
+
+.user-table {
+    background-color: #EFEFEF;
+    padding: 1% 2%;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-box {
+    position: relative;
+}
+
+.records {
+    max-height: 26vh;
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #E8E8E8;
+    margin-bottom: 5px;
+}
+
+.user-actions > button {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.user {
+    font-family: 'Graduate';
+    text-transform: uppercase;
+}
+
+.actions {
+    position: absolute;
+    bottom: 5px;
+}
+

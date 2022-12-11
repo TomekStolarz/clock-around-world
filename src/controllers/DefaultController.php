@@ -14,6 +14,10 @@ class DefaultController extends AppController {
     public function dashboard() {
         $this->render('dashboard');
     }
+
+    public function adminpanel() {
+        $this->render('admin-panel');
+    }
 }
 
 ?>

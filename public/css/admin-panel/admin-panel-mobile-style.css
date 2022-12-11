@@ -1,0 +1,4 @@
+.box {
+    align-items: center;
+    font-size: max(10px, 2vw);
+}
