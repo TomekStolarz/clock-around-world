@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/login-register-style/login-style.css">
-        <link rel="stylesheet" href="../css/login-register-style/login-mobile-style.css" media="(max-width:912px)">
+        <link rel="stylesheet" href="public/css/style.css">
+        <link rel="stylesheet" href="public/css/login-register-style/login-style.css">
+        <link rel="stylesheet" href="public/css/login-register-style/login-mobile-style.css" media="(max-width:912px)">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-        <title>Register page</title>
+        <title>Login page</title>
     </head>
 
     <body>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form action="login" method="POST">
                         <div class="form-title">
                             Login to app
                         </div>
@@ -35,11 +35,8 @@
                             <label for="password">Password</label>
                             <input name="password" type="password" placeholder="password">
                         </div>
-                        <div class="input-control">
-                            <label for="password">Reapeat password</label>
-                            <input name="password" type="password" placeholder="password">
-                        </div>
-                        <button type="submit">Register</button>
+                        <button type="submit">Login</button>
+                        <a class="register-link" href="register">or sing up here</a>
                     </form>
                 </div>
 

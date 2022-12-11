@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/dashboard-style/dashboard-style.css">
-        <link rel="stylesheet" href="../css/dashboard-style/dashboard-mobile-style.css" media="(max-width:912px)">
+        <link rel="stylesheet" href="public/css/style.css">
+        <link rel="stylesheet" href="public/css/dashboard-style/dashboard-style.css">
+        <link rel="stylesheet" href="public/css/dashboard-style/dashboard-mobile-style.css" media="(max-width:912px)">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kelly+Slab">
@@ -66,18 +66,18 @@
                     </div>
                     <div class="button-box">
                         <div class="actions">
-                            <a href="settings.html">
+                            <a href="settings">
                                 <button>
-                                    <img class="icon" src="../img/setting-icon.svg">
+                                    <img class="icon" src="public/img/setting-icon.svg">
                                 </button>
                             </a>
-                            <a href="login.html">
+                            <a href="login">
                                 <button>
-                                    <img class="icon" src="../img/logout-icon.svg">
+                                    <img class="icon" src="public/img/logout-icon.svg">
                                 </button>
                             </a>
                         </div>
-                        <a href="search.html">
+                        <a href="search">
                             <button>Find city 
                                     <span class="material-symbols-outlined">
                                         search

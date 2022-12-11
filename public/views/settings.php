@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/setting-style/settings-style.css">
-        <link rel="stylesheet" href="../css/setting-style/settings-mobile-style.css" media="(max-width:912px)">
+        <link rel="stylesheet" href="public/css/style.css">
+        <link rel="stylesheet" href="public/css/setting-style/settings-style.css">
+        <link rel="stylesheet" href="public/css/setting-style/settings-mobile-style.css" media="(max-width:912px)">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
@@ -50,15 +50,15 @@
                                     </option>
                                 </select>
                                 <button class="left-offset-button">
-                                    <img class="icon" src="../img/save-icon.svg">
+                                    <img class="icon" src="public/img/save-icon.svg">
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="actions">
-                        <a href="dashboard.html">
+                        <a href="dashboard">
                             <button>
-                                <img class="icon" src="../img/back-icon.svg">
+                                <img class="icon" src="public/img/back-icon.svg">
                             </button>
                         </a>
                     </div>
