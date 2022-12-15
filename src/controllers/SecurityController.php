@@ -4,10 +4,12 @@ require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
 
 class SecurityController extends AppController {
+    
    public function login() {
+  
         $user = new User('jonhSmith@example.com', 'haslo');
 
-        if($this->ispost()) {
+        if(!$this->ispost()) {
             return $this->render('start');
         }
 
@@ -18,7 +20,13 @@ class SecurityController extends AppController {
             return $this->render('start', ['message' => ['Wrong password or email']]);
         }
 
+        //check if user is admin run admin panel
+
         return $this->render('dashboard');
+   }
+
+   private function paneladmin() {
+        return this->render('admin-panel')
    }
 }
 

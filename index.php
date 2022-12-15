@@ -9,6 +9,9 @@ Routing::get('start', 'DefaultController');
 Routing::get('register', 'DefaultController');
 Routing::get('dashboard', 'DefaultController');
 Routing::get('adminpanel', 'DefaultController');
+Routing::get('citydetail', 'DefaultController');
+Routing::get('search', 'DefaultController');
+Routing::get('settings', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
 

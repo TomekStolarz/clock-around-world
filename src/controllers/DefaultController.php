@@ -18,6 +18,18 @@ class DefaultController extends AppController {
     public function adminpanel() {
         $this->render('admin-panel');
     }
+
+    public function search() {
+        $this->render('search');
+    }
+
+    public function settings() {
+        $this->render('settings');
+    }
+
+    public function citydetail() {
+        $this->render('city-detail');
+    }
 }
 
 ?>
