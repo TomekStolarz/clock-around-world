@@ -26,7 +26,7 @@ class SecurityController extends AppController {
    }
 
    private function paneladmin() {
-        return this->render('admin-panel')
+        return this->render('admin-panel');
    }
 }
 
