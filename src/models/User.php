@@ -4,9 +4,12 @@ class User{
     private $email;
     private $password;
 
-    public function __construct(string $email, string $password) {
+    private $role;
+
+    public function __construct(string $email, string $password, string $role) {
         $this->email = $email;
         $this->password = $password;
+        $this->$role = $role;
     }
 
     public function getEmail() {
@@ -24,6 +27,15 @@ class User{
     public function setPassword(string $password) {
         $this->password = $password;
     }
+
+	public function getRole() {
+		return $this->role;
+	}
+	
+	public function setRole($role): self {
+		$this->role = $role;
+		return $this;
+	}
 }
 
 ?>

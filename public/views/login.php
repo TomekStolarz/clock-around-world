@@ -27,6 +27,16 @@
                         <div class="form-title">
                             Login to app
                         </div>
+                        <div class="error">
+                            <?php
+                                if(isset($messages)) {
+                                    foreach ($messages as $message) {
+                                    echo "$message";
+                                    }
+                                }
+                            ?>
+                            <script src="../../src/scripts/show-login-error.js"></script>
+                        </div>
                         <div class="input-control">
                             <label for="email">Email</label>
                             <input name="email" type="text" placeholder="example@mail.com">
