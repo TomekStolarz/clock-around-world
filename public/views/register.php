@@ -28,6 +28,10 @@
                             Login to app
                         </div>
                         <div class="input-control">
+                            <label for="login">Login</label>
+                            <input name="login" type="text" placeholder="login">
+                        </div>
+                        <div class="input-control">
                             <label for="email">Email</label>
                             <input name="email" type="text" placeholder="example@mail.com">
                         </div>
