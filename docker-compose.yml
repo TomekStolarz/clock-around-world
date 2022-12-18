@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: docker/nginx/DockerFile
+      dockerfile: docker/nginx/Dockerfile
     ports: 
       - "8080:80"
     volumes:
@@ -14,7 +14,7 @@ services:
   php:
     build:
       context: .
-      dockerfile: docker/php/DockerFile
+      dockerfile: docker/php/Dockerfile
     volumes:
       - .:/app/
   postgres:
