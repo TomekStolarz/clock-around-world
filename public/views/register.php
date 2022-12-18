@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="public/css/login-register-style/login-style.css">
         <link rel="stylesheet" href="public/css/login-register-style/login-mobile-style.css" media="(max-width:912px)">
+        <link rel="stylesheet" href="public/css/login-register-style/register-style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <title>Register page</title>
@@ -25,7 +26,7 @@
                 <div class="login-form">
                     <form>
                         <div class="form-title">
-                            Login to app
+                            Register to app
                         </div>
                         <div class="input-control">
                             <label for="login">Login</label>

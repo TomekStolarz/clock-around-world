@@ -1,0 +1,9 @@
+.login-form{
+    height: 57vh;
+}
+
+@media screen and (max-width:912px) {
+    .login-form {
+        font-size: min(2.3vw, 15px);
+    }
+}
