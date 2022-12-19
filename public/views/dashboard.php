@@ -54,10 +54,10 @@
                             <?php foreach($followedCities as $city): ?>
                             <div class="row">
                                 <div class="col">
-                                    <?php $city->getCity()?>
+                                    <?= $city->getCity()?>
                                 </div>
                                 <div class="col">
-                                    <?php $city->getTimezone()?>
+                                    <?= $city->getTimezone()?>
                                 </div>
                                 <div class="col">
                                     10:00

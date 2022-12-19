@@ -25,7 +25,7 @@
                                     city name:
                                 </div>
                                 <div class="col-value">
-                                    <?php $city->getCity()?>
+                                    <?= $city->getCity()?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -33,7 +33,7 @@
                                     country:
                                 </div>
                                 <div class="col-value">
-                                    <?php $city->getCountry()?>
+                                    <?= $city->getCountry()?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -41,7 +41,7 @@
                                     latitude:
                                 </div>
                                 <div class="col-value">
-                                    <?php $city->getLatitude()?>
+                                    <?= $city->getLatitude()?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -49,7 +49,7 @@
                                     longitude:
                                 </div>
                                 <div class="col-value">
-                                    <?php $city->getLongitude()?>
+                                    <?= $city->getLongitude()?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -57,7 +57,7 @@
                                     timezone:
                                 </div>
                                 <div class="col-value">
-                                    <?php $city->getTimezone()?>
+                                    <?= $city->getTimezone()?>
                                 </div>
                             </div>
                             <div class="detail-group">
