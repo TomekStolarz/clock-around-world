@@ -11,10 +11,6 @@ class DefaultController extends AppController {
         $this->render('register');
     }
 
-    public function dashboard() {
-        $this->render('dashboard');
-    }
-
     public function adminpanel() {
         $this->render('admin-panel');
     }
@@ -27,9 +23,6 @@ class DefaultController extends AppController {
         $this->render('settings');
     }
 
-    public function citydetail() {
-        $this->render('city-detail');
-    }
 }
 
 ?>

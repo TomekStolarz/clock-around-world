@@ -51,17 +51,19 @@
                             </div>
                         </div>
                         <div class="records">
+                            <?php foreach($followedCities as $city): ?>
                             <div class="row">
                                 <div class="col">
-                                    gran canaria
+                                    <?php $city->getCity()?>
                                 </div>
                                 <div class="col">
-                                    gmb +2
+                                    <?php $city->getTimezone()?>
                                 </div>
                                 <div class="col">
                                     10:00
                                 </div>
                             </div>
+                            <?php endforeach;?>
                         </div>
                     </div>
                     <div class="button-box">

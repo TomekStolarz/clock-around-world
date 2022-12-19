@@ -25,7 +25,7 @@
                                     city name:
                                 </div>
                                 <div class="col-value">
-                                    cracow
+                                    <?php $city->getCity()?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -33,7 +33,7 @@
                                     country:
                                 </div>
                                 <div class="col-value">
-                                    poland
+                                    <?php $city->getCountry()?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -41,7 +41,7 @@
                                     latitude:
                                 </div>
                                 <div class="col-value">
-                                    50° 03' 41.15
+                                    <?php $city->getLatitude()?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -49,7 +49,7 @@
                                     longitude:
                                 </div>
                                 <div class="col-value">
-                                    19° 56' 11.69
+                                    <?php $city->getLongitude()?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -57,7 +57,7 @@
                                     timezone:
                                 </div>
                                 <div class="col-value">
-                                    GMT +2
+                                    <?php $city->getTimezone()?>
                                 </div>
                             </div>
                             <div class="detail-group">
