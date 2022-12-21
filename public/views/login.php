@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="public/css/login-register-style/login-mobile-style.css" media="(max-width:912px)">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+        <script src="public/scripts/show-login-error.js" defer></script>
+
         <title>Login page</title>
     </head>
 
@@ -35,7 +38,6 @@
                                     }
                                 }
                             ?>
-                            <script src="../scripts/show-login-error.js"></script>
                         </div>
                         <div class="input-control">
                             <label for="email">Email</label>
