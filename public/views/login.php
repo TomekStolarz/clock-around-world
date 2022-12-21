@@ -35,7 +35,7 @@
                                     }
                                 }
                             ?>
-                            <script src="../../src/scripts/show-login-error.js"></script>
+                            <script src="../scripts/show-login-error.js"></script>
                         </div>
                         <div class="input-control">
                             <label for="email">Email</label>
