@@ -14,6 +14,7 @@ Routing::get('search', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
+Routing::post('register', 'RegisterController');
 
 Routing::run($path);
 

@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="public/css/login-register-style/register-style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+        <script src="public/scripts/validate-register-form.js" defer></script>
         <title>Register page</title>
     </head>
 
@@ -24,7 +26,7 @@
                     </div>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form method="POST">
                         <div class="form-title">
                             Register to app
                         </div>
@@ -41,8 +43,8 @@
                             <input name="password" type="password" placeholder="password">
                         </div>
                         <div class="input-control">
-                            <label for="password">Reapeat password</label>
-                            <input name="password" type="password" placeholder="password">
+                            <label for="password-repeat">Reapeat password</label>
+                            <input name="password-repeat" type="password" placeholder="password">
                         </div>
                         <button type="submit">Register</button>
                     </form>

@@ -71,6 +71,15 @@ button:hover {
     cursor: pointer;
 }
 
+button:disabled:hover {
+    cursor: default;
+}
+
+button:disabled {
+    background-color: #D9D9D9;
+}
+
+
 .icon {
     width: 3em;
 }
@@ -87,4 +96,12 @@ button:hover {
     background-color: #D9D9D9;
     border-radius: 1.7em;
     padding: 0 2%;
+}
+
+.no-valid {
+    border: 1px solid #EF0000 !important;
+}
+
+.no-valid:focus {
+    outline: none;
 }

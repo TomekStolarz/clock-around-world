@@ -8,7 +8,7 @@ class UserRepository extends Repository {
     public function getUser(string $login): ?User {
         $stat = $this->database->connect()->prepare(
             'SELECT u.login as login, u.password as password, r.role as role, u.id_user as id_user, u.email as email
-             FROM public.users as u INNER JOIN public.r as roles ON r.id_role = u.id_role 
+             FROM public.users as u INNER JOIN public.roles as r ON r.id_role = u.id_role 
              WHERE u.login = :email or u.email = :email;
             '
         );
@@ -30,16 +30,16 @@ class UserRepository extends Repository {
         );
     }
 
-    public function canRegisterUser(string $login, string $email): ?string {
+    public function canRegisterUser(string $login, string $email): string|bool {
         $stat = $this->database->connect()->prepare(
             'SELECT *
-             FROM public.users as u INNER JOIN public.r as roles ON r.id_role = u.id_role 
+             FROM public.users as u INNER JOIN public.roles as r ON r.id_role = u.id_role 
              WHERE u.login = :login;
             '
         );
         $statTwo = $this->database->connect()->prepare(
             'SELECT *
-             FROM public.users as u INNER JOIN public.r as roles ON r.id_role = u.id_role 
+             FROM public.users as u INNER JOIN public.roles as r ON r.id_role = u.id_role 
              WHERE u.email = :email;
             '
         );
@@ -51,7 +51,7 @@ class UserRepository extends Repository {
 
         $userLoginExist = $stat->fetch(PDO::FETCH_ASSOC);
         $userEmailExist = $statTwo->fetch(PDO::FETCH_ASSOC);
-
+        //TODO: check why can add user with two same login or email
         $message = [];
         if($userEmailExist) {
             $message[] = "User with this email exist";
@@ -69,12 +69,12 @@ class UserRepository extends Repository {
             'INSERT INTO users(login, email, password, id_role) VALUES (?, ?, ?, ?);
             '
         );
-        $stat->execute(
+        $stat->execute([
             $user->getLogin(),
             $user->getEmail(),
             $user->getPassword(),
             $user->getRole()
-        );
+        ]);
     }
 }
 
