@@ -18,7 +18,7 @@ class User{
         $this->email = $email;
     }
 
-    public function getLogin() {
+    public function getLogin(): string {
         return $this->login;
     }
 
@@ -26,7 +26,7 @@ class User{
         $this->login = $login;
     }
 
-    public function getPassword() {
+    public function getPassword(): string {
         return $this->password;
     }
 
@@ -34,7 +34,7 @@ class User{
         $this->password = $password;
     }
 
-	public function getRole() {
+	public function getRole(): string {
 		return $this->role;
 	}
 	
@@ -42,11 +42,11 @@ class User{
 		$this->role = $role;
 	}
 
-    public function getId() {
+    public function getId(): int {
         return $this->id;
     }
 
-    public function getEmail() {
+    public function getEmail(): string {
 		return $this->email;
 	}
 	
