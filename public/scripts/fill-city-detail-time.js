@@ -1,3 +1,4 @@
+
 class Observable {
     constructor(exec) {
         this.listeners = new Set;
@@ -13,6 +14,8 @@ class Observable {
     }
 }
 
+const currentTime = new Date();
+
 const currentTime$ = new Observable(({next}) => {
     setInterval(() => next(new Date()), 1000);
 });
@@ -24,6 +27,8 @@ const timeColumn = Array.from(document.getElementsByClassName("col-value")).pop(
 const  getTime = (currentTime, timezone) =>{
     return currentTime.toLocaleTimeString("pl", {timeZone: timezone ?? "Europe/London" });
 }
+
+timeColumn.innerHTML = getTime(currentTime, timezone);
 
 const subscription = currentTime$.subscribe({ next: (time) => {timeColumn.innerHTML = getTime(time, timezone)} });
 
