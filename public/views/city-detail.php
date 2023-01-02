@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
-        <title>City Detail {{city.name}}</title>
+        <title>City Detail <?= $city->getCity();?></title>
         <script src="public/scripts/fill-city-detail-time.js" defer></script>
     </head>
 
@@ -26,7 +26,7 @@
                                     city name:
                                 </div>
                                 <div class="col-value">
-                                    <?= $city->getCity()?>
+                                    <?= $city->getCity();?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -34,7 +34,7 @@
                                     country:
                                 </div>
                                 <div class="col-value">
-                                    <?= $city->getCountry()?>
+                                    <?= $city->getCountry();?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -42,7 +42,7 @@
                                     latitude:
                                 </div>
                                 <div class="col-value">
-                                    <?= $city->getLatitude()?>
+                                    <?= $city->getLatitude();?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -50,7 +50,7 @@
                                     longitude:
                                 </div>
                                 <div class="col-value">
-                                    <?= $city->getLongitude()?>
+                                    <?= $city->getLongitude();?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -58,7 +58,7 @@
                                     timezone:
                                 </div>
                                 <div class="col-value">
-                                    <?= $city->getTimezone()?>
+                                    <?= $city->getTimezone();?>
                                 </div>
                             </div>
                             <div class="detail-group">
@@ -72,9 +72,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="actions">
-                            <button type="submit">Remove city from favourites</button>
-                            <button type="submit">Add city to favourites</button>
+                        <div class="actions" id="<?= $city->getId();?>">
+                            <button type="button">Remove city from favourites</button>
+                            <button type="button">Add city to favourites</button>
                         </div>
                     </div>
                     <div class="actions back">

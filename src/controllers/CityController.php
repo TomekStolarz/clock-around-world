@@ -17,12 +17,11 @@ class CityController extends AppController
         return $this->render('dashboard');
    }
 
-   public function citydetail() {
-    $id_city = 2;
-    $city = $this->cityRepostiry->getCity($id_city);
-    if($city) {
-        $this->render('city-detail', ["city" => $city]);
-    }
+   public function citydetail(int $id_city) {
+     $city = $this->cityRepostiry->getCity($id_city);
+     if($city) {
+          $this->render('city-detail', ["city" => $city]);
+     }
    }
 
    public function followedCity() {
@@ -30,13 +29,27 @@ class CityController extends AppController
 
         if($contentType === "application/json") {
             $content = trim(file_get_contents("php::input"));
-            $decoded = json . decode($content, true);
+            $decoded = json.decode($content, true);
 
             header("Content-type: application/json");
             http_response_code(200);
 
             echo json_encode($this->cityRepostiry->getFollowedCities($decoded['id']));
         }
+   }
+
+   public function follow(int $id_city) {
+        $id_user = 1;
+        //TODO: get user id
+        $this->cityRepostiry->addFollowedCity($id_city, $id_user);
+        http_response_code(200);
+   }
+
+   public function unfollow(int $id_city) {
+        $id_user = 1;
+        //TODO: get user id
+        $this->cityRepostiry->removeFollowedCity($id_city, $id_user);
+        http_response_code(200);
    }
 }
 

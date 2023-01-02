@@ -12,6 +12,8 @@ Routing::get('adminpanel', 'DefaultController');
 Routing::get('citydetail', 'CityController');
 Routing::get('search', 'DefaultController');
 Routing::get('settings', 'DefaultController');
+Routing::get('follow', 'CityController');
+Routing::get('unfollow', 'CityController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'RegisterController');
