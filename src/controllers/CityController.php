@@ -14,16 +14,30 @@ class CityController extends AppController
     }
 
    public function dashboard() {
-        $id_user = 2;//TODO: get stored user id from session
-        $followedCities = $this->cityRepostiry->getFollowedCities($id_user);
-        return $this->render('dashboard', ['followedCities' => $followedCities]);
+        return $this->render('dashboard');
    }
 
    public function citydetail() {
-    $id_city = 1;
+    $id_city = 2;
     $city = $this->cityRepostiry->getCity($id_city);
-    $this->render('city-detail', ["city" => $city]);
-}
+    if($city) {
+        $this->render('city-detail', ["city" => $city]);
+    }
+   }
+
+   public function followedCity() {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if($contentType === "application/json") {
+            $content = trim(file_get_contents("php::input"));
+            $decoded = json . decode($content, true);
+
+            header("Content-type: application/json");
+            http_response_code(200);
+
+            echo json_encode($this->cityRepostiry->getFollowedCities($decoded['id']));
+        }
+   }
 }
 
 ?>

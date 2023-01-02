@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
         <title>City Detail {{city.name}}</title>
+        <script src="public/scripts/fill-city-detail-time.js" defer></script>
     </head>
 
     <body>
@@ -65,7 +66,9 @@
                                     time:
                                 </div>
                                 <div class="col-value">
-                                    10:00
+                                    <script>
+                                         const timezone = `<?php echo $city->getTimezone(); ?>`; 
+                                    </script>                               
                                 </div>
                             </div>
                         </div>
