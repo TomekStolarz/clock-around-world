@@ -11,7 +11,7 @@ const formState = {valid: false, controls: {}};
 
 
 const validateEmail = ((event) => {
-    const isValid = /\w+@\w+.\w+/.test(event.target.value);
+    const isValid = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(event.target.value);
     updateFormState("email", isValid);
 });
 
@@ -30,6 +30,9 @@ const validatePassword = ((event) => {
 
 
 const validateReapetedPassword = ((event) => {
+    if(event === undefined && formState.controls["password-repeat"].touched === false) {
+        return false;
+    }
     const isValid = formInputs["password"].value === formInputs["password-repeat"].value;
     updateFormState("password-repeat", isValid);
 });
@@ -41,7 +44,7 @@ const setFormState = () => {
 }
 
 const updateFormState = (control, valid) => {
-    formState.controls[control] = {state: valid};
+    formState.controls[control] = {state: valid, touched: true};
     setFormState();
     changeErrorClass(formInputs[control], valid);
 };
@@ -59,6 +62,6 @@ const fieldValidators = {
 
 
 Object.values(formInputs).forEach((input) => {
-    formState.controls[input.name] = {state: false };
+    formState.controls[input.name] = {state: false, touched: false };
     input.addEventListener("focusout", fieldValidators[input.name]);
 });
