@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
         <script src="public/scripts/validate-register-form.js" defer></script>
+        <script src="public/scripts/show-message-error.js" defer></script>
         <title>Register page</title>
     </head>
 
@@ -29,6 +30,15 @@
                     <form method="POST">
                         <div class="form-title">
                             Register to app
+                        </div>
+                        <div class="error">
+                            <?php
+                                if(isset($messages)) {
+                                    foreach ($messages as $message) {
+                                    echo "$message";
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="input-control">
                             <label for="login">Login</label>

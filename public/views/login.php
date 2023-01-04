@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
-        <script src="public/scripts/show-login-error.js" defer></script>
+        <script src="public/scripts/show-message-error.js" defer></script>
 
         <title>Login page</title>
     </head>
