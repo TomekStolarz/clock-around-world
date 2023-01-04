@@ -24,8 +24,7 @@ class RegisterController extends AppController {
         $password = $_POST['password'];
 
         $message = $this->userRepository->canRegisterUser($login, $email);
-
-        if($message != true) {
+        if(gettype($message) == "array") {
             return $this->render('register', ['messages' => $message]);
         }
 

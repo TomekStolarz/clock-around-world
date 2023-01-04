@@ -30,7 +30,7 @@ class UserRepository extends Repository {
         );
     }
 
-    public function canRegisterUser(string $login, string $email): string|bool {
+    public function canRegisterUser(string $login, string $email): array|bool {
         $stat = $this->database->connect()->prepare(
             'SELECT *
              FROM public.users as u INNER JOIN public.roles as r ON r.id_role = u.id_role 
@@ -51,7 +51,6 @@ class UserRepository extends Repository {
 
         $userLoginExist = $stat->fetch(PDO::FETCH_ASSOC);
         $userEmailExist = $statTwo->fetch(PDO::FETCH_ASSOC);
-        //TODO: check why can add user with two same login or email
         $message = [];
         if($userEmailExist) {
             $message[] = "User with this email exist";
@@ -61,7 +60,7 @@ class UserRepository extends Repository {
             $message[] = "User with this login exist";
         }
 
-        return ($userEmailExist == false && $userLoginExist == false) || $message;
+        return count($message) == 0 ? true : $message;
     }
 
     public function registerUser(User $user) {
