@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
+        <script src="public/scripts/handle-settings-changes.js" defer></script>
         <title>Settings</title>
     </head>
 
@@ -24,16 +25,16 @@
                                 <div class="label">
                                     email
                                 </div>
-                                <input type="email" value="example@mail.com" readonly/>
-                                <button class="left-offset-button">
-                                    change email
+                                <input type="email" value="Wyswietlic email uzytkownika" readonly/>
+                                <button class="left-offset-button" id="email-btn">
+                                    Unlock input
                                 </button>
                             </div>
                             <div class="setting">
                                 <div class="label">
                                     password
                                 </div>
-                                <button>
+                                <button id="password-btn">
                                     change password
                                 </button>
                             </div>
@@ -65,5 +66,18 @@
                 </div>
             </div>    
         </div>
+        <dialog id="alert-dialog">
+            <form method="dialog">
+                <div class="header">
+
+                </div>
+                <div class="dialog-content">
+
+                </div>
+                <div class="dialog-action">
+
+                </div>
+            </form>
+        </dialog>
     </body>
 </html>

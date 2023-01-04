@@ -30,36 +30,56 @@ class UserRepository extends Repository {
         );
     }
 
-    public function canRegisterUser(string $login, string $email): array|bool {
+    private function emailExist(string $email): string|bool {
         $stat = $this->database->connect()->prepare(
             'SELECT *
-             FROM public.users as u INNER JOIN public.roles as r ON r.id_role = u.id_role 
-             WHERE u.login = :login;
-            '
-        );
-        $statTwo = $this->database->connect()->prepare(
-            'SELECT *
-             FROM public.users as u INNER JOIN public.roles as r ON r.id_role = u.id_role 
+             FROM public.users as u
              WHERE u.email = :email;
             '
         );
-        $stat->bindParam(':login', $login, PDO::PARAM_STR);
-        $statTwo->bindParam(':email', $email, PDO::PARAM_STR);
+
+        $stat->bindParam(':email', $email, PDO::PARAM_STR);
         $stat->execute();
-        $statTwo->execute();
+        $userEmailExist = $stat->fetch(PDO::FETCH_ASSOC);
         
 
-        $userLoginExist = $stat->fetch(PDO::FETCH_ASSOC);
-        $userEmailExist = $statTwo->fetch(PDO::FETCH_ASSOC);
-        $message = [];
         if($userEmailExist) {
-            $message[] = "User with this email exist";
+            return "User with this email exist";
         }
+        return false;
+    }
+
+    private function loginExist(string $login): string|bool {
+        $stat = $this->database->connect()->prepare(
+            'SELECT *
+             FROM public.users as u
+             WHERE u.login = :login;
+            '
+        );
+
+        $stat->bindParam(':login', $login, PDO::PARAM_STR);
+        $stat->execute();
+        $userLoginExist = $stat->fetch(PDO::FETCH_ASSOC);
 
         if($userLoginExist) {
-            $message[] = "User with this login exist";
+            return "User with this login exist";
+        }
+        return false;
+    }
+
+    public function canRegisterUser(string $login, string $email): array|bool {
+        
+
+        $userLoginExist = $this->loginExist($login);
+        $userEmailExist = $this->emailExist($email);
+        $message = [];
+        if($userEmailExist != false) {
+            $message[] = $userEmailExist;
         }
 
+        if($userLoginExist != false) {
+            $message[] = $userLoginExist;
+        }
         return count($message) == 0 ? true : $message;
     }
 
@@ -74,6 +94,23 @@ class UserRepository extends Repository {
             $user->getPassword(),
             $user->getRole()
         ]);
+    }
+
+    public function emailChange(string $email, int $id_user): string|bool{
+        $userEmailExist = $this->emailExist($email);
+        if ($userEmailExist != false) {
+            return $userEmailExist;
+        }
+
+        $stat = $this->database->connect()->prepare(
+            'UPDATE users SET email = :email WHERE id_user = :id_user;
+            '
+        );
+        $stat->bindParam(':email', $email, PDO::PARAM_STR);
+        $stat->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stat->execute();
+
+        return true;
     }
 }
 

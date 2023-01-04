@@ -30,7 +30,7 @@ class CityController extends AppController
 
         if($contentType === "application/json") {
             $content = trim(file_get_contents("php::input"));
-            $decoded = json.decode($content, true);
+            $decoded = json_decode($content, true);
 
             header("Content-type: application/json");
             http_response_code(200);
