@@ -17,6 +17,7 @@ Routing::get('unfollow', 'CityController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'RegisterController');
+Routing::post('isFollowed', 'CityController');
 
 Routing::run($path);
 

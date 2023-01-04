@@ -30,7 +30,7 @@ class Routing {
         $controller = self::$routes[$action];
         $object = new $controller;
 
-        $id = intval($urlParts[1]) ?? "";
+        $id = $urlParts[1] ?? "";
 
         $object->$action($id);
     }

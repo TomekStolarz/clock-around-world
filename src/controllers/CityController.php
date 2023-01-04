@@ -17,7 +17,8 @@ class CityController extends AppController
         return $this->render('dashboard');
    }
 
-   public function citydetail(int $id_city) {
+   public function citydetail() {
+          $id_city = 2;
      $city = $this->cityRepostiry->getCity($id_city);
      if($city) {
           $this->render('city-detail', ["city" => $city]);
@@ -50,6 +51,23 @@ class CityController extends AppController
         //TODO: get user id
         $this->cityRepostiry->removeFollowedCity($id_city, $id_user);
         http_response_code(200);
+   }
+
+   public function isFollowed() {
+     $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+     $user_id = 1;
+
+     if ($contentType === "application/json") {
+          $content = trim(file_get_contents("php://input"));
+          $decoded = json_decode($content, true);
+
+          header('Content-type: application/json');
+          http_response_code(200);
+
+          $followed = $this->cityRepostiry->isFollowed($decoded['id_city'], $user_id);
+          $response = array('isFollowed' => $followed);
+          echo json_encode($response);
+     }
    }
 }
 

@@ -10,6 +10,7 @@
         
         <title>City Detail <?= $city->getCity();?></title>
         <script src="public/scripts/fill-city-detail-time.js" defer></script>
+        <script src="public/scripts/handle-followers.js" defer></script>
     </head>
 
     <body>

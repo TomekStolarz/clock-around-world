@@ -84,15 +84,15 @@ class CityRepository extends Repository {
 
     public function isFollowed(int $id_city, int $id_user) {
         $stat = $this->database->connect()->prepare(
-            'SELECT FROM followed_cities WHERE id_user = :id_user AND id_city = :id_city;
+            'SELECT * FROM followed_cities WHERE id_user = :id_user AND id_city = :id_city;
             '
         );
-        $stat->bindParam(':id_user', $id_city, PDO::PARAM_INT);
-        $stat->bindParam(':id_city', $id_user, PDO::PARAM_INT);
+        $stat->bindParam(':id_city', $id_city, PDO::PARAM_INT);
+        $stat->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stat->execute();
 
-        $isFollowed = $stat->fetch(PDO::FETCH_ASSOC);
-        if ($isFollowed)
+        $selected = $stat->fetch(PDO::FETCH_ASSOC);
+        if ($selected == false)
             return false;
         return true; 
     }
