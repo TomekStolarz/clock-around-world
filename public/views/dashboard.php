@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
         
         <script src="public/scripts/dashboard-clock.js" defer></script>
+        <script>
+            const cityTimezones = [];                  
+        </script>
         <title>Dashboard</title>
     </head>
 
@@ -54,17 +57,20 @@
                         </div>
                         <div class="records">
                             <?php foreach($followedCities as $city): ?>
-                            <div class="row">
+                            <a class="row" href="public/citydetail/<?= $city->getId()?>">
                                 <div class="col">
                                     <?= $city->getCity()?>
                                 </div>
                                 <div class="col">
                                     <?= $city->getTimezone()?>
+                                    <script>
+                                        cityTimezones.push(JSON.parse(`<?= json_encode($city->jsonSerialize());?>`));
+                                    </script>
                                 </div>
-                                <div class="col">
-                                    10:00
+                                <div class="col city-time">
+                                    
                                 </div>
-                            </div>
+                            </a>
                             <?php endforeach;?>
                         </div>
                     </div>

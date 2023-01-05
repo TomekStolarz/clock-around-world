@@ -14,7 +14,9 @@ class CityController extends AppController
     }
 
    public function dashboard() {
-        return $this->render('dashboard');
+     $user_id = 1;
+     $followedCities = $this->cityRepostiry->getFollowedCities($user_id);
+     return $this->render('dashboard', ["followedCities" => $followedCities]);
    }
 
    public function citydetail() {
@@ -25,19 +27,6 @@ class CityController extends AppController
      }
    }
 
-   public function followedCity() {
-        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-
-        if($contentType === "application/json") {
-            $content = trim(file_get_contents("php::input"));
-            $decoded = json_decode($content, true);
-
-            header("Content-type: application/json");
-            http_response_code(200);
-
-            echo json_encode($this->cityRepostiry->getFollowedCities($decoded['id']));
-        }
-   }
 
    public function follow(int $id_city) {
         $id_user = 1;
@@ -61,7 +50,6 @@ class CityController extends AppController
           $content = trim(file_get_contents("php://input"));
           $decoded = json_decode($content, true);
 
-          header('Content-type: application/json');
           http_response_code(200);
 
           $followed = $this->cityRepostiry->isFollowed($decoded['id_city'], $user_id);

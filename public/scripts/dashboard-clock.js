@@ -47,7 +47,7 @@ class Observable {
     }
 }
 
-const currentTime = new Date();
+let currentTime = new Date();
 
 const currentTime$ = new Observable(({next}) => {
     setInterval(() => next(new Date()), 1000);
@@ -131,6 +131,28 @@ const animate = (tiles, positions, starts, degs) => {
 
 fillClock(getTime(currentTime, userLocation?.timezone));
 
-const subscription = currentTime$.subscribe({ next: (time) => {fillClock(getTime(time, userLocation?.timezone))} });
+const subscription = currentTime$.subscribe({ next: (time) => 
+    {
+        currentTime = time;
+        fillClock(getTime(time, userLocation?.timezone));
+        fillFollowedTimes();
+    } 
+});
 
 window.onbeforeunload  = () => {subscription.unsubscribe()};
+
+const fillFollowedTimes  = () => {
+    const records = document.querySelector(".records");
+    const timeColumns = records.getElementsByClassName("col city-time");
+    
+    cityTimezones.forEach((city, index) => {
+        let cityTime = getTime(currentTime, city.timezone).split("")
+                            .filter((x) => /\d/.test(x))
+                            .slice(0, 4)
+                            .join("");
+
+        cityTime = cityTime.match(/\d{2}/g).join(":");
+
+        timeColumns[index].innerHTML = cityTime;
+    })
+}
