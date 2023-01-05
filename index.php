@@ -19,6 +19,7 @@ Routing::post('login', 'SecurityController');
 Routing::post('register', 'RegisterController');
 Routing::post('isFollowed', 'CityController');
 Routing::post('emailChange', 'UserController');
+Routing::post('passwordChange', 'UserController');
 
 Routing::run($path);
 

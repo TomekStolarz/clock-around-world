@@ -105,3 +105,47 @@ button:disabled {
 .no-valid:focus {
     outline: none;
 }
+
+
+dialog {
+    border: none;
+    border-radius: 1em;
+    width: 35vw;
+    height: min-content;
+}
+
+dialog > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    height: 100%;
+}
+
+#dialog-content {
+    font-size: 1.1em;
+    flex-direction: column;
+    display: flex;
+}
+
+#dialog-actions {
+    display: flex;
+    gap: 2em;
+    justify-content: flex-end;
+}
+
+#dialog-actions > button {
+    width: 30%;
+}
+
+@media screen and (max-width:912px) {
+    dialog {
+        width: 70vw;
+        font-size: 2em;
+    }
+
+    #dialog-actions > button {
+        width: 50%;
+        font-size: 1.5em;
+    }
+}

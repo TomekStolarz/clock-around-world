@@ -25,9 +25,9 @@
                                 <div class="label">
                                     email
                                 </div>
-                                <input type="email" value="Wyswietlic email uzytkownika" readonly/>
+                                <input type="email" placeholder="Wyswietlic email uzytkownika" readonly/>
                                 <button class="left-offset-button" id="email-btn">
-                                    Unlock input
+                                    Change email
                                 </button>
                             </div>
                             <div class="setting">
@@ -35,7 +35,7 @@
                                     password
                                 </div>
                                 <button id="password-btn">
-                                    change password
+                                    Change password
                                 </button>
                             </div>
                             <div class="setting">
@@ -67,17 +67,7 @@
             </div>    
         </div>
         <dialog id="alert-dialog">
-            <form method="dialog">
-                <div class="header">
-
-                </div>
-                <div class="dialog-content">
-
-                </div>
-                <div class="dialog-action">
-
-                </div>
-            </form>
+           
         </dialog>
     </body>
 </html>
