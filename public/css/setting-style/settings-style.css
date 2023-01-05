@@ -19,7 +19,6 @@
     border-radius: 5px;
 
     display: grid;
-    grid-template-rows: 3fr 1fr;
     min-height: 80%;
 }
 
