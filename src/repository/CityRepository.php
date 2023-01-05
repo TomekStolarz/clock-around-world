@@ -57,6 +57,24 @@ class CityRepository extends Repository {
         return $cities;
     }
 
+    public function getCitiesBySearch(string $searchTerm): array|null {
+        $searchLower = '%' . strtolower($searchTerm) . '%';
+        $searchTerm = strtolower($searchTerm);
+        $stat = $this->database->connect()->prepare(
+            'SELECT c.id_city as id_city, c.city AS city, c.country as country, t.timezone as timezone, c.latitude as latitude, c.longitude as longitude
+             FROM public.cities AS c 
+             INNER JOIN public.timezones AS t on c.id_timezone = t.id_timezone 
+             WHERE LOWER(c.city) LIKE :search OR LOWER(c.country) = :searchCountry
+             LIMIT 100;
+            '
+        );
+        $stat->bindParam(':search', $searchLower, PDO::PARAM_STR);
+        $stat->bindParam(':searchCountry', $searchTerm , PDO::PARAM_STR);
+        $stat->execute();
+
+        return  $stat->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getFollowedCities(int $id_user): array
     {
         $followedCities = [];

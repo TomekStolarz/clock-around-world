@@ -75,6 +75,19 @@ class CityController extends AppController
      http_response_code(200);
      echo json_encode($cities);
    }
+
+   public function searchCities() {
+     $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+     if ($contentType === "application/json") {
+          $content = trim(file_get_contents("php://input"));
+          $decoded = json_decode($content, true);
+
+          http_response_code(200);
+
+          echo json_encode($this->cityRepostiry->getCitiesBySearch($decoded['search']));
+     }
+ }
 }
 
 ?>

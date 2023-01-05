@@ -5,3 +5,7 @@
 .records > .row {
     padding: 4% 0%;
 }
+
+.records {
+    grid-auto-rows: 20%;
+}

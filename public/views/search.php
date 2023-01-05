@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
+        <script src="public/scripts/search.js" defer></script>
         <title>Search panel</title>
     </head>
 
@@ -23,12 +24,10 @@
                             <input class="row search-input" type="text" name="search" placeholder="Type city name, country or geographic coord">
                         </div>
                         <div class="table-label">
-                            Founded 5 cities
+                            
                         </div>
                         <div class="records">
-                            <div class="row">
-                                    gran canaria
-                            </div>
+
                         </div>
                     </div>
                     <div class="actions">

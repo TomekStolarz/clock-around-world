@@ -9,8 +9,8 @@ Routing::get('start', 'DefaultController');
 Routing::get('register', 'DefaultController');
 Routing::get('dashboard', 'CityController');
 Routing::get('adminpanel', 'DefaultController');
-Routing::get('citydetail', 'CityController');
 Routing::get('search', 'DefaultController');
+Routing::get('citydetail', 'CityController');
 Routing::get('settings', 'DefaultController');
 Routing::get('follow', 'CityController');
 Routing::get('unfollow', 'CityController');
@@ -18,6 +18,7 @@ Routing::get('allCities', 'CityController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'RegisterController');
+Routing::post('searchCities', 'CityController');
 Routing::post('isFollowed', 'CityController');
 Routing::post('emailChange', 'UserController');
 Routing::post('passwordChange', 'UserController');
