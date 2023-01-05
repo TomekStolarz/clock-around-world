@@ -69,6 +69,12 @@ class CityController extends AppController
           echo json_encode($response);
      }
    }
+
+   public function allCities() {
+     $cities = $this->cityRepostiry->getCities();
+     http_response_code(200);
+     echo json_encode($cities);
+   }
 }
 
 ?>

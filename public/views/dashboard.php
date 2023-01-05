@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kelly+Slab">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        
+        <script src="public/scripts/dashboard-clock.js" defer></script>
         <title>Dashboard</title>
     </head>
 
@@ -17,20 +19,20 @@
             <div class="box">
                 <div class="clock-box">
                     <div class="clock-title">
-                        time at  {{location}}
+                        Time at
                     </div>
                     <div class="clock">
                         <div class="tile-group">
-                            <div class="number-tile">1</div>
-                            <div class="number-tile">0</div>
+                            <div class="number-tile" data-value="0">0</div>
+                            <div class="number-tile" data-value="0">0</div>
                         </div>
                         <div class="tile-group">
-                            <div class="number-tile">0</div>
-                            <div class="number-tile">0</div>
+                            <div class="number-tile" data-value="0">0</div>
+                            <div class="number-tile" data-value="0">0</div>
                         </div>
                         <div class="tile-group">
-                            <div class="number-tile">0</div>
-                            <div class="number-tile">0</div>
+                            <div class="number-tile" data-value="0">0</div>
+                            <div class="number-tile" data-value="0">0</div>
                         </div>
                     </div>
                 </div>

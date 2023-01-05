@@ -31,6 +31,32 @@ class CityRepository extends Repository {
         );
     }
 
+    public function getCities(): array {
+        $cities = [];
+        $stat = $this->database->connect()->prepare(
+            'SELECT c.id_city as id_city, c.city AS city, c.country as country, t.timezone as timezone, c.latitude as latitude, c.longitude as longitude
+             FROM public.cities AS c 
+             INNER JOIN public.timezones AS t on c.id_timezone = t.id_timezone 
+            '
+        );
+        $stat->execute();
+
+        $_cities = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($_cities as $city) {
+            $_city = new City(
+                $city['city'],
+                $city['country'],
+                $city['timezone'],
+                $city['latitude'],
+                $city['longitude'],
+                $city['id_city']
+            );
+            $cities[] = $_city->jsonSerialize();
+        }
+        return $cities;
+    }
+
     public function getFollowedCities(int $id_user): array
     {
         $followedCities = [];

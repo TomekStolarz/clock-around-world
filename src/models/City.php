@@ -41,6 +41,19 @@ class City{
     public function getId(): int {
         return $this->id;
     }
+
+    public function jsonSerialize()
+    {
+        return array(
+             'city' => $this->getCity(),
+             'country' => $this->getCountry(),
+             'timezone' => $this->getTimezone(),
+             'latitude' => $this->getLatitude(),
+             'longitude' => $this->getLongitude(),
+             'id' => $this->getId()
+        );
+    }
+
 }
 
 ?>
