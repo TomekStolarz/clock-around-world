@@ -11,10 +11,6 @@ class DefaultController extends AppController {
         $this->render('register');
     }
 
-    public function adminpanel() {
-        $this->render('admin-panel');
-    }
-
     public function search() {
         $this->render('search');
     }

@@ -47,6 +47,11 @@ class UserController extends AppController {
       }
    }
 
+   public function adminpanel() {
+      $users = $this->userRepository->getUsers();
+      return $this->render('admin-panel', ["users" => $users]);
+  }
+
 }
 
 ?>

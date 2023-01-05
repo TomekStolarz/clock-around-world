@@ -2,3 +2,7 @@
     align-items: center;
     font-size: max(10px, 2vw);
 }
+
+.records {
+    max-height: 70vh;
+}

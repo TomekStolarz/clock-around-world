@@ -20,23 +20,24 @@
                     </div>
                     <div class="user-table">
                         <div class="records">
-                            <div class="row">
-                                    <div class="user">
-                                        example@mail.com
-                                    </div>
-                                    <div class="user-actions">
-                                        <button>
-                                            <img class="icon" src="public/img/password-icon.svg">
-                                        </button>
-                                        <button>
-                                            <img class="icon" src="public/img/delete-icon.svg">
-                                        </button>
-                                    </div>
-                            </div>
+                            <?php foreach($users as $user): ?>
+                                <div class="row">
+                                        <div class="user">
+                                            <?= $user->getLogin();?>
+                                        </div>
+                                        <div class="user-actions">
+                                            <button>
+                                                <img class="icon" src="public/img/password-icon.svg">
+                                            </button>
+                                            <button>
+                                                <img class="icon" src="public/img/delete-icon.svg">
+                                            </button>
+                                        </div>
+                                </div>
+                            <?php endforeach;?>
                         </div>
                     </div>
                     <div class="actions">
-                        
                         <button>
                             <a href="login">
                                 <img class="icon" src="public/img/logout-icon.svg">

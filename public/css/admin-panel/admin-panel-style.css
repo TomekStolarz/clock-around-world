@@ -18,17 +18,22 @@
 }
 
 .records {
-    max-height: 26vh;
+    max-height: 60vh;
+    display: grid;
+    gap: 5px;
 }
 
 
 .row {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
     align-items: center;
+    grid-template-columns: 1fr 1fr;
     border-radius: 5px;
     background-color: #E8E8E8;
-    margin-bottom: 5px;
+}
+
+.row > div {
+    text-align: center;
 }
 
 .user-actions > button {
@@ -39,6 +44,7 @@
 .user {
     font-family: 'Graduate';
     text-transform: uppercase;
+    font-size: 1.3em;
 }
 
 .actions {

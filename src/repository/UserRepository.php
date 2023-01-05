@@ -30,6 +30,41 @@ class UserRepository extends Repository {
         );
     }
 
+    public function getUsers(): array|null {
+        $users = [];
+        $stat = $this->database->connect()->prepare(
+            "SELECT u.login as login, u.password as password, r.role as role, u.id_user as id_user, u.email as email
+             FROM public.users as u INNER JOIN public.roles as r ON r.id_role = u.id_role 
+             WHERE r.role != 'admin';
+            "
+        );
+        
+        $stat->execute();
+
+        $fetchedUsers = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($fetchedUsers as $user) {
+            $users[] = new User(
+                $user['login'],
+                $user['password'],
+                $user['role'],
+                $user['email'],
+                $user['id_user']
+            );
+        }
+
+        return $users;
+    }
+
+    public function deleteUser(int $id_user) {
+        $stat = $this->database->connect()->prepare(
+            'DELETE FROM public.users WHERE id_user = :id_user;
+            '
+        );
+        $stat->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stat->execute();
+    }
+
     private function emailExist(string $email): string|bool {
         $stat = $this->database->connect()->prepare(
             'SELECT *
