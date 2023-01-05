@@ -25,7 +25,7 @@ search.addEventListener("keyup", (event) => {
 });
 
 const createCities = (cities) => {
-    cities.forEach((city) => {
+    cities.sort((a, b) => a.city.localeCompare(b.city)).forEach((city) => {
         createCity(city);
     });
 }
