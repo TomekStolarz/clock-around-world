@@ -112,6 +112,18 @@ class UserRepository extends Repository {
 
         return true;
     }
+
+    public function setNewPassword(string $password, int $id_user): bool{
+        $stat = $this->database->connect()->prepare(
+            'UPDATE users SET password = :password WHERE id_user = :id_user;
+            '
+        );
+        $stat->bindParam(':password', $password, PDO::PARAM_STR);
+        $stat->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stat->execute();
+
+        return true;
+    }
 }
 
 
