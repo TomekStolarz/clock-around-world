@@ -24,7 +24,7 @@ class Routing {
             $action = "login";
         }
 
-        if (!isset($_COOKIE["user-id"])) {
+        if (!isset($_COOKIE["user-id"]) && $action != "register") {
             $action = "login";
         }
 
