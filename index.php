@@ -15,6 +15,7 @@ Routing::get('settings', 'DefaultController');
 Routing::get('follow', 'CityController');
 Routing::get('unfollow', 'CityController');
 Routing::get('allCities', 'CityController');
+Routing::get('logout', 'SecurityController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'RegisterController');

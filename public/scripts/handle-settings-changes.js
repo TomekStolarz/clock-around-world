@@ -38,6 +38,10 @@ const handleChangeEmail = (newEmail) => {
             throw new Error(data.message);
         }
         emailInput.setAttribute('placeholder', newEmail);
+        const date = new Date();
+        date.setTime(date.getTime() + (30*60*1000));
+        let expires = "expires="+ date.toUTCString();
+        document.cookie = "user-email" + "=" + newEmail + ";" + expires + ";path=/";
     }).catch((message) => {
         alertDialog(message.message);
     });

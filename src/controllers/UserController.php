@@ -18,7 +18,7 @@ class UserController extends AppController {
 
    public function emailChange() {
       $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-      $id_user = 1;
+      $id_user = $_COOKIE["user-id"];
 
       if ($contentType === "application/json") {
             $content = trim(file_get_contents("php://input"));
@@ -40,13 +40,12 @@ class UserController extends AppController {
 
    public function passwordChange() {
       $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-      $id_user = 1;
+      $id_user = $_COOKIE["user-id"];
 
       if ($contentType === "application/json") {
             $content = trim(file_get_contents("php://input"));
             $decoded = json_decode($content, true);
-            
-            $changed = $this->userRepository->setNewPassword($decoded['password'], $id_user);
+            $this->userRepository->setNewPassword(password_hash($decoded['password'], PASSWORD_BCRYPT), $id_user);
             http_response_code(200);
       }
    }
@@ -85,6 +84,3 @@ class UserController extends AppController {
 }
 
 ?>
-
-
-

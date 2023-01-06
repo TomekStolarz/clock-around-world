@@ -14,13 +14,13 @@ class CityController extends AppController
     }
 
    public function dashboard() {
-     $user_id = 1;
-     $followedCities = $this->cityRepostiry->getFollowedCities($user_id);
+     $id_user = $_COOKIE["user-id"];
+     $followedCities = $this->cityRepostiry->getFollowedCities($id_user);
      return $this->render('dashboard', ["followedCities" => $followedCities]);
    }
 
    public function citydetail() {
-          $id_city = 2;
+     $id_city = 2;
      $city = $this->cityRepostiry->getCity($id_city);
      if($city) {
           $this->render('city-detail', ["city" => $city]);
@@ -29,22 +29,20 @@ class CityController extends AppController
 
 
    public function follow(int $id_city) {
-        $id_user = 1;
-        //TODO: get user id
-        $this->cityRepostiry->addFollowedCity($id_city, $id_user);
-        http_response_code(200);
+     $id_user = $_COOKIE["user-id"];
+     $this->cityRepostiry->addFollowedCity($id_city, $id_user);
+     http_response_code(200);
    }
 
    public function unfollow(int $id_city) {
-        $id_user = 1;
-        //TODO: get user id
-        $this->cityRepostiry->removeFollowedCity($id_city, $id_user);
-        http_response_code(200);
+     $id_user = $_COOKIE["user-id"];
+     $this->cityRepostiry->removeFollowedCity($id_city, $id_user);
+     http_response_code(200);
    }
 
    public function isFollowed() {
      $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-     $user_id = 1;
+     $id_user = $_COOKIE["user-id"];
 
      if ($contentType === "application/json") {
           $content = trim(file_get_contents("php://input"));
@@ -52,7 +50,7 @@ class CityController extends AppController
 
           http_response_code(200);
 
-          $followed = $this->cityRepostiry->isFollowed($decoded['id_city'], $user_id);
+          $followed = $this->cityRepostiry->isFollowed($decoded['id_city'], $id_user);
           $response = array('isFollowed' => $followed);
           echo json_encode($response);
      }

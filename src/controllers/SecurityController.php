@@ -36,15 +36,33 @@ class SecurityController extends AppController {
         }
 
         $this->historyRepository->addUserHistory($user->getId(), "login");
+        
 
-        //check if user is admin run admin panel
+        $user_cookie = 'user-id';
+        $cookie_value = $user->getId();
+        setcookie($user_cookie, $cookie_value, time() + (60 * 30), "/");
 
-        return $this->render('dashboard');
+        $user_cookie = 'user-email';
+        $cookie_value = $user->getEmail();
+        setcookie($user_cookie, $cookie_value, time() + (60 * 30), "/");
+
+        if ($user->getRole() === "admin") {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/adminpanel");
+        } 
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/dashboard");
    }
 
    public function logout() {
-        $user_id = 1;
-        $this->historyRepository->addUserHistory($user_id, "logout");
+        $this->historyRepository->addUserHistory($_COOKIE['user-id'], "logout");
+
+        setcookie('user-id', $_COOKIE['user-id'], time() - 10, "/");
+        setcookie('user-email', $_COOKIE['user-email'], time() - 10, "/");
+        
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/login");
    }
 
    private function paneladmin() {

@@ -22,7 +22,7 @@ class HistoryRepository extends Repository {
 
      public function addUserHistory(int $userId, string $action) {
         $stat = $this->database->connect()->prepare(
-            'INSERT INTO public session(action, time) VALUES (?, ?)'
+            'INSERT INTO public.sessions(id_user, action) VALUES (?, ?)'
         );
         $stat->execute([
             $userId,

@@ -25,7 +25,7 @@
                                 <div class="label">
                                     email
                                 </div>
-                                <input type="email" placeholder="Wyswietlic email uzytkownika" readonly/>
+                                <input type="email" placeholder="<?= $_COOKIE["user-email"];?>" readonly/>
                                 <button class="left-offset-button" id="email-btn">
                                     Change email
                                 </button>
