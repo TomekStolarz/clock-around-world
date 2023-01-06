@@ -21,7 +21,11 @@ class Routing {
         $urlParts = explode("/", $url);
         $action = $urlParts[0];
         if($action == "") {
-            $action = "start";
+            $action = "login";
+        }
+
+        if (!isset($_COOKIE["user-id"])) {
+            $action = "login";
         }
 
         if(!array_key_exists($action, self::$routes)) {
