@@ -59,5 +59,15 @@
     padding: 1em;
     border-radius: 7px;
     text-transform: uppercase;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
 }
+
+#dialog-content {
+    gap: 0.2em;
+    max-height: 50vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
 
