@@ -33,7 +33,7 @@
                     <div class="actions">
                         <a href="dashboard">
                             <button>
-                                <img class="icon" src="public/img/back-icon.svg">
+                                <img class="icon" src="public/img/back-icon.svg" alt="search">
                             </button>
                         </a>
                     </div>

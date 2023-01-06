@@ -51,7 +51,7 @@
                                     </option>
                                 </select>
                                 <button class="left-offset-button">
-                                    <img class="icon" src="public/img/save-icon.svg">
+                                    <img class="icon" src="public/img/save-icon.svg" alt="save">
                                 </button>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                     <div class="actions">
                         <a href="dashboard">
                             <button>
-                                <img class="icon" src="public/img/back-icon.svg">
+                                <img class="icon" src="public/img/back-icon.svg" alt="return">
                             </button>
                         </a>
                     </div>

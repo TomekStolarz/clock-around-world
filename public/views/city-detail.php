@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
         <title>City Detail <?= $city->getCity();?></title>
-        
+
         <script src="public/scripts/clock.js"></script>
         <script src="public/scripts/fill-city-detail-time.js" defer></script>
         <script src="public/scripts/handle-followers.js" defer></script>
@@ -83,7 +83,7 @@
                     <div class="actions back">
                         <a href="dashboard">
                             <button>
-                                <img class="icon" src="public/img/back-icon.svg">
+                                <img class="icon" src="public/img/back-icon.svg" alt="return">
                             </button>
                         </a>
                     </div>

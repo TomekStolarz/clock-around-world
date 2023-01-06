@@ -79,12 +79,12 @@
                         <div class="actions">
                             <a href="settings">
                                 <button>
-                                    <img class="icon" src="public/img/setting-icon.svg">
+                                    <img class="icon" src="public/img/setting-icon.svg" alt="settings">
                                 </button>
                             </a>
                             <a href="logout">
                                 <button>
-                                    <img class="icon" src="public/img/logout-icon.svg">
+                                    <img class="icon" src="public/img/logout-icon.svg" alt="logout">
                                 </button>
                             </a>
                         </div>

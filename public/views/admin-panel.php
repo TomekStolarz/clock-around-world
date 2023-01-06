@@ -41,7 +41,12 @@
                     <div class="actions">
                         <button>
                             <a href="login">
-                                <img class="icon" src="public/img/logout-icon.svg">
+                                <img class="icon" src="public/img/logout-icon.svg" alt="logout">
+                            </a>
+                        </button>
+                        <button>
+                            <a href="dashboard">
+                                <img class="icon" src="public/img/dashboard-icon.svg" alt="dashboard">
                             </a>
                         </button>
                     </div>
