@@ -21,7 +21,7 @@ class RegisterController extends AppController {
         
         $email = $_POST['email'];
         $login = $_POST['login'];
-        $password = $_POST['password'];
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
         $message = $this->userRepository->canRegisterUser($login, $email);
         if(gettype($message) == "array") {
