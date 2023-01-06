@@ -40,7 +40,7 @@
                             ?>
                         </div>
                         <div class="input-control">
-                            <label for="email">Email</label>
+                            <label for="email">Login</label>
                             <input name="email" type="text" placeholder="example@mail.com">
                         </div>
                         <div class="input-control">

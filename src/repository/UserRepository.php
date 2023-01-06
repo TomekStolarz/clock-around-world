@@ -184,6 +184,30 @@ class UserRepository extends Repository {
 
         return true;
     }
+
+    public function isUserAdmin(int $id_user): bool {
+        $stat = $this->database->connect()->prepare(
+            'SELECT r.role as role
+             FROM public.roles as r
+             INNER JOIN public.users as u ON r.id_role = u.id_role
+             WHERE u.id_user = :id_user;
+            '
+        );
+
+        $stat->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stat->execute();
+        $userRole = $stat->fetch(PDO::FETCH_ASSOC);
+
+        $isAdmin = false;
+
+        foreach ($userRole as $role) {
+            if($role === "admin") {
+                $isAdmin = true;
+            }
+        }
+        
+        return $isAdmin;
+    }
 }
 
 

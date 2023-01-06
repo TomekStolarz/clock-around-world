@@ -14,7 +14,13 @@ class RegisterController extends AppController {
     }
 
    public function register() {
+        $url = "http://$_SERVER[HTTP_HOST]";
 
+        if(isset($_COOKIE["user-id"])) {
+            header("Location: {$url}/dashboard");
+            return;
+        }
+        
         if(!$this->ispost()) {
             return $this->render('register');
         }
