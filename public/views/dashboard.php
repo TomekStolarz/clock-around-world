@@ -82,7 +82,7 @@
                                     <img class="icon" src="public/img/setting-icon.svg">
                                 </button>
                             </a>
-                            <a href="login">
+                            <a href="logout">
                                 <button>
                                     <img class="icon" src="public/img/logout-icon.svg">
                                 </button>
