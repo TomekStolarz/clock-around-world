@@ -38,8 +38,11 @@ List the ready features here:
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+![Login page](./img/login.png)
+![Dashboard page](./img/dashboard.png)
+![Search page](./img/search.png)
+![City detail page](./img/citydetail.png)
+![Settings page](./img/setting.png)
 .
 
 
