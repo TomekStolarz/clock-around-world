@@ -23,6 +23,7 @@ Routing::post('isFollowed', 'CityController');
 Routing::post('emailChange', 'UserController');
 Routing::post('passwordChange', 'UserController');
 Routing::post('userDelete', 'UserController');
+Routing::post('userHistory', 'UserController');
 
 Routing::run($path);
 

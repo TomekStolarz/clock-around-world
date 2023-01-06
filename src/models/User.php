@@ -53,6 +53,15 @@ class User{
 	public function setEmail($email) {
 		$this->email = $email;
 	}
+
+    public function jsonSerialize()
+    {
+        return array(
+             'login' => $this->getLogin(),
+             'email' => $this->getEmail(),
+             'id' => $this->getId()
+        );
+    }
 }
 
 ?>

@@ -30,6 +30,31 @@ class UserRepository extends Repository {
         );
     }
 
+    public function getUserById(int $userId): ?User {
+        $stat = $this->database->connect()->prepare(
+            'SELECT u.login as login, u.password as password, r.role as role, u.id_user as id_user, u.email as email
+             FROM public.users as u INNER JOIN public.roles as r ON r.id_role = u.id_role 
+             WHERE u.id_user = :id;
+            '
+        );
+        $stat->bindParam(':id', $userId, PDO::PARAM_INT);
+        $stat->execute();
+
+        $user = $stat->fetch(PDO::FETCH_ASSOC);
+
+        if($user == false) {
+            return null;
+        }
+
+        return new User(
+            $user['login'],
+            $user['password'],
+            $user['role'],
+            $user['email'],
+            $user['id_user']
+        );
+    }
+
     public function getUsers(): array|null {
         $users = [];
         $stat = $this->database->connect()->prepare(

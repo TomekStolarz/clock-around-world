@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
+        <script src="public/scripts/admin-actions.js" defer></script>
         <title>Admin panel</title>
     </head>
 
@@ -22,14 +23,14 @@
                         <div class="records">
                             <?php foreach($users as $user): ?>
                                 <div class="row">
-                                        <div class="user">
+                                        <div class="user" data-id="<?=$user->getId()?>">
                                             <?= $user->getLogin();?>
                                         </div>
                                         <div class="user-actions">
-                                            <button>
-                                                <img class="icon" src="public/img/password-icon.svg">
+                                            <button class="history">
+                                                <img class="icon" src="public/img/history-icon.svg">
                                             </button>
-                                            <button>
+                                            <button class="deletion">
                                                 <img class="icon" src="public/img/delete-icon.svg">
                                             </button>
                                         </div>
@@ -47,5 +48,8 @@
                 </div>
             </div>    
         </div>
+        <dialog id="alert-dialog">
+           
+        </dialog>
     </body>
 </html>
