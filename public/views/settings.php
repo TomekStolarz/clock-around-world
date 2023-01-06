@@ -17,7 +17,7 @@
             <div class="box">
                 <div class="table-box">
                     <div class="table-title">
-                        Setting
+                        Settings
                     </div>
                     <div class="settings-table">
                         <div class="records">
