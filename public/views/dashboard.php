@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kelly+Slab">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
         
+        <script src="public/scripts/clock.js"></script>
         <script src="public/scripts/dashboard-clock.js" defer></script>
         <script>
             const cityTimezones = [];                  

@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
         <title>City Detail <?= $city->getCity();?></title>
+        
+        <script src="public/scripts/clock.js"></script>
         <script src="public/scripts/fill-city-detail-time.js" defer></script>
         <script src="public/scripts/handle-followers.js" defer></script>
     </head>
