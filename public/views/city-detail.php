@@ -2,17 +2,17 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="public/css/style.css">
-        <link rel="stylesheet" href="public/css/city-detail-style/city-detail-style.css">
-        <link rel="stylesheet" href="public/css/city-detail-style/city-detail-mobile-style.css" media="(max-width:912px)">
+        <link rel="stylesheet" href="../public/css/style.css">
+        <link rel="stylesheet" href="../public/css/city-detail-style/city-detail-style.css">
+        <link rel="stylesheet" href="../public/css/city-detail-style/city-detail-mobile-style.css" media="(max-width:912px)">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
         <title>City Detail <?= $city->getCity();?></title>
 
-        <script src="public/scripts/clock.js"></script>
-        <script src="public/scripts/fill-city-detail-time.js" defer></script>
-        <script src="public/scripts/handle-followers.js" defer></script>
+        <script src="../public/scripts/clock.js"></script>
+        <script src="../public/scripts/fill-city-detail-time.js" defer></script>
+        <script src="../public/scripts/handle-followers.js" defer></script>
     </head>
 
     <body>
@@ -81,9 +81,9 @@
                         </div>
                     </div>
                     <div class="actions back">
-                        <a href="dashboard">
+                        <a href="javascript:history.back()">
                             <button>
-                                <img class="icon" src="public/img/back-icon.svg" alt="return">
+                                <img class="icon" src="../public/img/back-icon.svg" alt="return">
                             </button>
                         </a>
                     </div>

@@ -58,7 +58,7 @@
                         </div>
                         <div class="records">
                             <?php foreach($followedCities as $city): ?>
-                            <a class="row" href="public/citydetail/<?= $city->getId()?>">
+                            <a class="row" href="citydetail/<?= $city->getId()?>">
                                 <div class="col">
                                     <?= $city->getCity()?>
                                 </div>
@@ -80,6 +80,11 @@
                             <a href="settings">
                                 <button>
                                     <img class="icon" src="public/img/setting-icon.svg" alt="settings">
+                                </button>
+                            </a>
+                            <a href="adminpanel">
+                                <button>
+                                    <img class="icon" src="public/img/admin-panel-icon.svg" alt="admin panel">
                                 </button>
                             </a>
                             <a href="logout">

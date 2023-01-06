@@ -33,7 +33,7 @@ const createCities = (cities) => {
 const createCity = (city) => {
     const row = document.createElement("a");
     row.setAttribute("class", "row");
-    row.setAttribute("href", `public/citydetail/${city.id_city}`)
+    row.setAttribute("href", `citydetail/${city.id_city}`)
 
     const cityCol = document.createElement("div");
     cityCol.innerHTML = city.city;
