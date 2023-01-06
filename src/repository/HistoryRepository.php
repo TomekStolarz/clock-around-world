@@ -19,6 +19,16 @@ class HistoryRepository extends Repository {
 
         return $history;
      }
+
+     public function addUserHistory(int $userId, string $action) {
+        $stat = $this->database->connect()->prepare(
+            'INSERT INTO public session(action, time) VALUES (?, ?)'
+        );
+        $stat->execute([
+            $userId,
+            $action
+        ]);
+     }
 }
 
 
