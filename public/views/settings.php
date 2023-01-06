@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
+        <script src="public/scripts/dialog.js" defer></script>
         <script src="public/scripts/handle-settings-changes.js" defer></script>
         <title>Settings</title>
     </head>

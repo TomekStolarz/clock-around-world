@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         
+        <script src="public/scripts/dialog.js" defer></script>
         <script src="public/scripts/admin-actions.js" defer></script>
         <title>Admin panel</title>
     </head>
@@ -28,10 +29,10 @@
                                         </div>
                                         <div class="user-actions">
                                             <button class="history">
-                                                <img class="icon" src="public/img/history-icon.svg">
+                                                <img class="icon" src="public/img/history-icon.svg" alt="history">
                                             </button>
                                             <button class="deletion">
-                                                <img class="icon" src="public/img/delete-icon.svg">
+                                                <img class="icon" src="public/img/delete-icon.svg" alt="delete">
                                             </button>
                                         </div>
                                 </div>
