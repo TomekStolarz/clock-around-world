@@ -31,14 +31,14 @@ fetch("/isFollowed", {
 
 
 buttonAddFollowers.addEventListener("click", () => {
-    fetch(`follow/${cityId}`).then( () => {
+    fetch(`/follow/${cityId}`).then( () => {
         isFollowed = true;
         changeDisabledButtons(isFollowed);
     });
 })
 
 buttonRemoveFollowers.addEventListener("click", () => {
-    fetch(`unfollow/${cityId}`).then( () => {
+    fetch(`/unfollow/${cityId}`).then( () => {
         isFollowed = false;
         changeDisabledButtons(isFollowed);
     });
