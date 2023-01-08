@@ -65,7 +65,7 @@ class CityRepository extends Repository {
              FROM public.cities AS c 
              INNER JOIN public.timezones AS t on c.id_timezone = t.id_timezone 
              WHERE LOWER(c.city) LIKE :search OR LOWER(c.country) = :searchCountry
-             LIMIT 100;
+             LIMIT 500;
             '
         );
         $stat->bindParam(':search', $searchLower, PDO::PARAM_STR);
