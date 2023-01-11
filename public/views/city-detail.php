@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div class="actions back">
-                        <a href="javascript:history.back()">
+                        <a href="../dashboard">
                             <button>
                                 <img class="icon" src="../public/img/back-icon.svg" alt="return">
                             </button>
