@@ -156,7 +156,7 @@ class UserRepository extends Repository {
         ]);
     }
 
-    public function emailChange(string $email, int $id_user): string|bool{
+    public function emailChange(string $email, int $id_user){
         $userEmailExist = $this->emailExist($email);
         if ($userEmailExist != false) {
             return $userEmailExist;
@@ -169,11 +169,9 @@ class UserRepository extends Repository {
         $stat->bindParam(':email', $email, PDO::PARAM_STR);
         $stat->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stat->execute();
-
-        return true;
     }
 
-    public function setNewPassword(string $password, int $id_user): bool{
+    public function setNewPassword(string $password, int $id_user){
         $stat = $this->database->connect()->prepare(
             'UPDATE users SET password = :password WHERE id_user = :id_user;
             '
@@ -181,8 +179,6 @@ class UserRepository extends Repository {
         $stat->bindParam(':password', $password, PDO::PARAM_STR);
         $stat->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stat->execute();
-
-        return true;
     }
 
     public function isUserAdmin(int $id_user): bool {
