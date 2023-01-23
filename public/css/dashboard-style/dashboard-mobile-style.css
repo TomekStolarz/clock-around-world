@@ -14,3 +14,7 @@
     align-items: center;
     font-size: max(10px, 2vw);
 }
+
+.button-box > a > button {
+    padding: 0.6em 3em;
+}
