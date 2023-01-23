@@ -136,8 +136,7 @@ class CityRepository extends Repository {
         $stat->execute();
 
         $selected = $stat->fetch(PDO::FETCH_ASSOC);
-        if ($selected == false)
-            return false;
+
         return $selected; 
     }
 }

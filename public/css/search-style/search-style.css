@@ -27,7 +27,6 @@
 
 .records {
     display: grid;
-    grid-auto-rows: 30%;
     gap: 0.5em;
 }
 
